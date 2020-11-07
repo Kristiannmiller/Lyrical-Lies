@@ -13,9 +13,9 @@ const App = () => {
         <header>
           <img
             className="logo"
-            title="Return To Lobby"
+            title="Lyrical Lies Logo"
             src={logo}
-            alt="Navigate back to home page"
+            alt="Lyrical Lies Logo"
           />
           <section className="navigationWrap">
           <Route>
@@ -29,7 +29,7 @@ const App = () => {
             </NavLink>
           </Route>
           <Route>
-            <NavLink id="favesButton" activeClassName="activeHomeButton" to='/faves'>
+            <NavLink id="favesButton" activeClassName="activeFavesButton" to='/faves'>
               <img
                 className="navImg"
                 title="View Favorite Lyrics"
