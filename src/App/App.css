@@ -1,4 +1,37 @@
 * {
   padding: 0;
   margin: 0;
+  background-color: #F5F5F5;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  background-color: #A8763E;
+}
+h1 {
+  font-size: 2rem;
+}
+.logo {
+  height: 6rem;
+  padding: 1vh;
+  background-color: #A8763E;
+}
+.navImg {
+  background-color: #A8763E;
+  height: 10vh;
+}
+.navigationWrap {
+  display: flex;
+  width: 85vw;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #A8763E;
+}
+
+a {
+  margin: 2vh;
+  align-self: flex-end;
+  width: 10vh;
+  height: 10vh;
 }
