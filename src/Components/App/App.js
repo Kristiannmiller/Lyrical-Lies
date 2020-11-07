@@ -62,8 +62,8 @@ class App extends Component {
           <Route path='/home'>
             <HomePage displayLyrics={this.displayLyrics}/>
           </Route>
-          <Route path='/lyrics'>
-            <LyricsPage lyrics={this.state.lyrics}/>
+          <Route path={!this.state.songInfo.artist ? `/home` : `/lyrics`}>
+            <LyricsPage songInfo={this.state.songInfo} lyrics={this.state.lyrics}/>
           </Route>
           <Route exactPath='/'>
             <LandingPage />
