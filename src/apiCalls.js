@@ -22,6 +22,6 @@ export const getLyrics = (artist, title) => {
     }
   })
   .catch(error => {
-    return "No song found. Please try again"
+    return "Uh oh! This record is scratched. Please try again"
   })
 }
