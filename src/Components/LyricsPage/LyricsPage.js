@@ -3,7 +3,6 @@ import logo from '../../Assets/lyricalLiesLogo.png'
 import './LyricsPage.css'
 
 const LyricsPage = ({songInfo, lyrics, error}) => {
-  console.log(songInfo, lyrics, "and error", error);
   if(error || !lyrics) {
     return (
       <section className="landingWrap">
