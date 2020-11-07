@@ -14,15 +14,22 @@ class App extends Component {
     super()
     this.state= {
       songInfo: {},
-      lyrics: ""
+      lyrics: "",
+      error: ""
     }
   }
   displayLyrics = async (songInfo) => {
     const foundLyrics = await getLyrics(songInfo.artist.name, songInfo.title)
-    this.setState(prevState => ({
-      songInfo: {...prevState.songInfo = songInfo},
-      lyrics: foundLyrics.lyrics
-    }))
+    console.log(foundLyrics);
+    if(foundLyrics.lyrics === '') {
+      this.setState({error: 'Uh oh! This record is scratched. Please try again'})
+    } else {
+      this.setState(prevState => ({
+        songInfo: {...prevState.songInfo = songInfo},
+        lyrics: foundLyrics.lyrics,
+        error: ''
+      }))
+    }
   }
   render() {
     return (
