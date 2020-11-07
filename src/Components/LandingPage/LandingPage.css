@@ -1,0 +1,17 @@
+.landingWrap {
+  text-align: center;
+  padding: 10vh;
+}
+
+.welcomeLogo {
+  align-self: center;
+  height: 30vh;
+}
+
+.slogan {
+  padding-bottom: 5vh;
+}
+
+.intro {
+  padding-bottom: 5vh;
+}
