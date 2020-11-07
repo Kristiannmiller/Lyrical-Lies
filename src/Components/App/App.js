@@ -5,6 +5,7 @@ import logo from '../../Assets/lyricalLiesLogo.png'
 import faves from '../../Assets/favesIcon.png'
 import home from '../../Assets/homeIcon.png'
 import LandingPage from '../LandingPage/LandingPage.js'
+import HomePage from '../HomePage/HomePage.js'
 
 const App = () => {
   return (
@@ -41,7 +42,9 @@ const App = () => {
           </section>
         </header>
       <Switch>
-        <Route path='/home'></Route>
+        <Route path='/home'>
+          <HomePage />
+        </Route>
         <Route path='/lyrics'></Route>
         <Route exactPath='/'>
           <LandingPage />
