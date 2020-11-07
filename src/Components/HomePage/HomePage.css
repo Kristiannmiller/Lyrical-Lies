@@ -1,0 +1,8 @@
+.searchWrap {
+  margin: 10vw;
+}
+#searchInput {
+  width: 80vw;
+  height: 3rem;
+  font-size: 2rem;
+}
