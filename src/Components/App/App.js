@@ -19,7 +19,10 @@ class App extends Component {
   }
   displayLyrics = async (songInfo) => {
     const foundLyrics = await getLyrics(songInfo.artist.name, songInfo.title)
-    this.setState({songInfo: songInfo, lyrics: foundLyrics.lyrics})
+    this.setState(prevState => ({
+      songInfo: {...prevState.songInfo = songInfo},
+      lyrics: foundLyrics.lyrics
+    }))
   }
   render() {
     return (
