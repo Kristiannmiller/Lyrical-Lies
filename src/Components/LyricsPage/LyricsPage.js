@@ -13,16 +13,22 @@ const LyricsPage = ({songInfo, lyrics, error}) => {
           alt="welcome to Lyrical Lies"
         />
         <h2 className="message">
-        {error ? error : `Putting that record on now`}</h2>
+        {!error ? `Putting that record on now` : error}</h2>
       </section>
     )
   }
   return (
-    <section className="lyricsWrap">
+    <section className="lyricsPageWrap">
       <section className="lyrics">
         <h1>{songInfo.title_short}</h1>
         <h2>{songInfo.artist.name}</h2>
         <p>{lyrics}</p>
+      </section>
+      <section className="commentsWrap">
+        <h2>Say What?!</h2>
+        <section className="comments">
+          <h3>commentshere</h3>
+        </section>
       </section>
     </section>
   )
