@@ -1,0 +1,19 @@
+.lyricsPageWrap {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  overflow: scroll
+}
+
+.lyrics {
+  margin: 10vw;
+  width: 40vw;
+  text-align: center;
+  overflow: scroll;
+}
+.commentsWrap {
+  margin: 10vw;
+  width: 40vw;
+  overflow: scroll;
+  text-align: center;
+}
