@@ -17,7 +17,7 @@ class HomePage extends Component {
     return (
       <section>
         <input onChange={this.handleChange} id="searchInput" type="text" placeholder="start typing for song results"></input>
-        <ResultList input={this.state.input}/>
+        <ResultList input={this.state.input} displayLyrics={this.props.displayLyrics}/>
       </section>
     )
   }
