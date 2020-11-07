@@ -36,10 +36,9 @@ class ResultList extends Component {
     const resultData = this.state.results.map((result, i) => {
       if( i < 6 ) {
         return (
-        <button onClick={this.handleClick} id={result.id} className="resultCard">
-          <h1>{result.artist.name}</h1>
-          <h2>{result.title_short}</h2>
-        </button>
+        <section onClick={this.handleClick} id={result.id} className="resultCard">
+          <h1>{`${result.artist.name} - ${result.title_short}`}</h1>
+        </section>
       )}
     })
     return (
