@@ -15,7 +15,8 @@ class App extends Component {
     this.state= {
       songInfo: {},
       lyrics: "",
-      error: ""
+      error: "",
+      comments: []
     }
   }
   displayLyrics = async (songInfo) => {
