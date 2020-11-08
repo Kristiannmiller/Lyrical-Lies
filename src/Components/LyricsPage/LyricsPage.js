@@ -23,10 +23,15 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
     <section className="lyricsPageWrap">
       <section className="lyricsWrap">
         <section className="songInfo">
-          <h1 className="songDetails">{songInfo.title_short}</h1>
+          <h1 className="songDetails">
+          {songInfo.title_short}
+          </h1>
           <h2 className="songDetails">{songInfo.artist.name}</h2>
+          <audio className="sample" controls>
+            <source src={songInfo.preview} type="audio/mpeg"/>
+          </audio>
         </section>
-        <p className="lyrics">{lyrics}</p>
+        <p className="lyrics">{`${lyrics}`}</p>
       </section>
       <section className="commentsWrap">
         <h2 className="commentHeader">Lyrical Lies:</h2>

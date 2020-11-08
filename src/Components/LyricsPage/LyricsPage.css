@@ -4,19 +4,32 @@
   height: 80vh;
 }
 .lyricsWrap {
-  margin: 5vw;
-  width: 40vw;
-  height: 68vh;
+  margin: 3vw;
+  width: 48vw;
+  height: 75vh;
   text-align: center;
   overflow: hidden;
   border: 3px solid #171213;
   border-radius: 20px;
   background-color: white;
+  white-space: pre-wrap;
 }
 .songInfo {
+  display: flex;
+  flex-direction: column;
   padding: 1rem 0rem;
   color: #f5f5f5;
   background-color: #254441;
+}
+.albumArt {
+  width: 10vh;
+  position:absolute;
+}
+.sample {
+  width: 20vw;
+  height: 2.5vh;
+  align-self: center;
+  margin-top: .5rem;
 }
 .songDetails {
   color: #f5f5f5;
@@ -31,7 +44,7 @@
   background-color: white;
 }
 .commentsWrap {
-  margin: 5vw 2.5vw;
+  margin: 4vw 2vw;
   width: 40vw;
   height: 68vh;
   text-align: center;
