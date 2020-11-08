@@ -31,6 +31,11 @@ class App extends Component {
       }))
     }
   }
+  submitComment = (e) => {
+    e.preventDefault()
+    const newComment = {songId: this.state.songInfo.id, comment: e.target.previousSibling.value}
+    this.setState({comments: [...this.state.comments, newComment]})
+  }
   render() {
     return (
       <BrowserRouter>
