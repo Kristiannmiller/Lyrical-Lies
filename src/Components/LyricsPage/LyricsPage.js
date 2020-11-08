@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../Assets/lyricalLiesLogo.png'
 import './LyricsPage.css'
 import CommentsForm from '../CommentsForm/CommentsForm.js'
+import CommentCards from '../CommentCards/CommentCards.js'
 
 const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
   if(error || !lyrics) {
@@ -28,7 +29,9 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
       <section className="commentsWrap">
         <h2>Say What?!</h2>
         <section className="comments">
-          <h2>comments here</h2>
+          <section className="cardContainer">
+            <CommentCards songId={songInfo.id} comments={comments}/>
+          </section>
           <CommentsForm songId={songInfo.id} submitComment={submitComment}/>
         </section>
       </section>
