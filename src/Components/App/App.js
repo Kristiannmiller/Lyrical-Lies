@@ -39,6 +39,7 @@ class App extends Component {
     e.preventDefault()
     const newComment = {songId: this.state.songInfo.id, comment: e.target.previousSibling.value}
     this.setState({comments: [...this.state.comments, newComment]})
+    e.target.previousSibling.value = ''
   }
   render() {
     return (
