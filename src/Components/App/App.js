@@ -22,7 +22,11 @@ class App extends Component {
   displayLyrics = async (songInfo) => {
     const foundLyrics = await getLyrics(songInfo.artist.name, songInfo.title)
     if(foundLyrics.lyrics === '') {
-      this.setState({error: 'Uh oh! This record is scratched. Please try again'})
+      this.setState(prevState => ({
+        songInfo: {...prevState.songInfo = {}},
+        lyrics: '',
+        error: 'Uh oh! This record is scratched. Please try again'
+      }))
     } else {
       this.setState(prevState => ({
         songInfo: {...prevState.songInfo = songInfo},
@@ -74,7 +78,7 @@ class App extends Component {
           <Route path='/home'>
             <HomePage displayLyrics={this.displayLyrics}/>
           </Route>
-          <Route path={'/lyrics'}>
+          <Route path='/lyrics'>
             <LyricsPage
               songInfo={this.state.songInfo}
               lyrics={this.state.lyrics}
