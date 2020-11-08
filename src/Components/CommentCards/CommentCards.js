@@ -1,5 +1,6 @@
 import React from 'react';
 import './CommentCards.css'
+import PropTypes from 'prop-types'
 
 
 const CommentCards = ({ songId, comments }) => {
@@ -27,3 +28,8 @@ const CommentCards = ({ songId, comments }) => {
   )
 }
 export default CommentCards
+
+CommentCards.propTypes = {
+  songId: PropTypes.number,
+  comments: PropTypes.array
+}
