@@ -6,9 +6,10 @@ import CommentCards from '../CommentCards/CommentCards.js'
 
 const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
   const onTrackChange = () => {
-    this.refs.audio.pause();
-    this.refs.audio.load();
-    this.refs.audio.play();
+    const audio = document.getElementsByClassName("sample")[0]
+    if(audio) {
+      audio.load();
+    }
   }
   if(error || !lyrics) {
     return (
@@ -24,13 +25,14 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
       </section>
     )
   }
+
   let audioSample =
-  <audio onclick={onTrackChange} className="sample" controls>
+  <audio onClick={onTrackChange()} className="sample" controls>
     <source src={songInfo.preview} type="audio/mpeg"/>
   </audio>
 
   return (
-    <section className="lyricsPageWrap">
+    <section data-testid="lyricsView" className="lyricsPageWrap">
       <section className="lyricsWrap">
         <section className="songInfo">
           <h1 className="songDetails">
