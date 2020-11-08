@@ -22,7 +22,7 @@ class HomePage extends Component {
             onChange={this.handleChange}
             id="searchInput"
             type="text"
-            autocomplete="off"
+            autoComplete="off"
             placeholder="Enter song title followed by artist"></input>
         </form>
         <ResultList input={this.state.input} displayLyrics={this.props.displayLyrics}/>

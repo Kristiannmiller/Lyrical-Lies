@@ -2,18 +2,48 @@
   display: flex;
   flex-direction: row;
   height: 80vh;
-  overflow: scroll
 }
-
-.lyrics {
-  margin: 10vw;
+.lyricsWrap {
+  margin: 5vw;
   width: 40vw;
+  height: 68vh;
   text-align: center;
+  overflow: hidden;
+  border: 3px solid #171213;
+  border-radius: 20px;
+  background-color: white;
+}
+.songInfo {
+  padding: 1rem 0rem;
+  color: #f5f5f5;
+  background-color: #254441;
+}
+.songDetails {
+  color: #f5f5f5;
+  background-color: #254441;
+}
+.lyrics {
+  height: 50vh;
+  margin: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
+  font-size: 1.25rem;
   overflow: scroll;
+  background-color: white;
 }
 .commentsWrap {
-  margin: 10vw;
+  margin: 5vw 2.5vw;
   width: 40vw;
-  overflow: scroll;
+  height: 68vh;
   text-align: center;
+  overflow: hidden;
+}
+.cardContainer {
+  height: 50vh;
+  margin: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
+  overflow: scroll;
+}
+.commentHeader {
+  text-align: center;
+  align-self: center;
 }
