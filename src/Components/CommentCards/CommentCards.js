@@ -16,6 +16,8 @@ const CommentCards = ({ songId, comments }) => {
           </section>
         )
       })
+    } else {
+      content = <h1>No lyrical lies here yet. Add yours!</h1>
     }
   }
   return (
