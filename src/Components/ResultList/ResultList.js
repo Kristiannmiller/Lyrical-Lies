@@ -34,7 +34,7 @@ class ResultList extends Component {
       return <h2>{this.state.errorMessage}</h2>
     }
     const resultData = this.state.results.map((result, i) => {
-      if( i < 6 ) {
+      if( i < 5 ) {
         return (
         <section key={i} onClick={this.handleClick} id={result.id} className="resultCard">
           <h1>{`${result.artist.name} - ${result.title_short}`}</h1>
