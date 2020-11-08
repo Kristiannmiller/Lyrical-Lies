@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import ResultList from './ResultList.js';
 
 test('works', () => {
   expect(true).toBe(true);

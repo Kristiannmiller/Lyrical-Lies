@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import CommentsForm from './CommentsForm';
+import CommentsForm from './CommentsForm.js';
 
 test('works', () => {
   expect(true).toBe(true);
@@ -21,7 +21,7 @@ test('works', () => {
   //type into comment input
   //click submit button
   //assert that getByplaceholdertext.value to be ''
-  
+
 //INTEGRATION:
 // It should fire a given function on onClick
   //render component with mocked function

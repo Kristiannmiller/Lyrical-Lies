@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import HomePage from './App';
+import HomePage from './HomePage.js';
 
 test('works', () => {
   expect(true).toBe(true);
@@ -27,4 +27,3 @@ test('works', () => {
   //mock api call with error;
   //type space
   //expect error message to be in document
-  
