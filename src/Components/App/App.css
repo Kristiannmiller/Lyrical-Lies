@@ -2,6 +2,10 @@
   padding: 0;
   margin: 0;
   background-color: #F5F5F5;
+  text-decoration: none;
+}
+form :focus {
+  outline: none !important;
 }
 header {
   display: flex;
@@ -11,6 +15,12 @@ header {
 }
 h1 {
   font-size: 2rem;
+}
+a {
+  margin: 2vh;
+  align-self: flex-end;
+  width: 10vh;
+  height: 10vh;
 }
 .logo {
   height: 6rem;
@@ -27,11 +37,4 @@ h1 {
   flex-direction: row;
   justify-content: flex-end;
   background-color: #A8763E;
-}
-
-a {
-  margin: 2vh;
-  align-self: flex-end;
-  width: 10vh;
-  height: 10vh;
 }

@@ -15,9 +15,17 @@ class HomePage extends Component {
   }
   render() {
     return (
-      <section>
-        <input onChange={this.handleChange} id="searchInput" type="text" placeholder="start typing for song results"></input>
-        <ResultList input={this.state.input}/>
+      <section className="searchWrap">
+        <form>
+          <input
+            name="search"
+            onChange={this.handleChange}
+            id="searchInput"
+            type="text"
+            autoComplete="off"
+            placeholder="Enter song title followed by artist"></input>
+        </form>
+        <ResultList input={this.state.input} displayLyrics={this.props.displayLyrics}/>
       </section>
     )
   }
