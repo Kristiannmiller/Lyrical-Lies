@@ -21,7 +21,7 @@ const CommentCards = ({ songId, comments }) => {
     }
   }
   return (
-    <section className="cardsContainer">
+    <section data-testid="commentCards" className="cardsContainer">
       {content}
     </section>
   )
