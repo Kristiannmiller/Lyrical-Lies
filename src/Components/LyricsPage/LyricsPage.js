@@ -5,6 +5,11 @@ import CommentsForm from '../CommentsForm/CommentsForm.js'
 import CommentCards from '../CommentCards/CommentCards.js'
 
 const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
+  const onTrackChange = () => {
+    this.refs.audio.pause();
+    this.refs.audio.load();
+    this.refs.audio.play();
+  }
   if(error || !lyrics) {
     return (
       <section className="landingWrap">
@@ -19,6 +24,11 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
       </section>
     )
   }
+  let audioSample =
+  <audio onclick={onTrackChange} className="sample" controls>
+    <source src={songInfo.preview} type="audio/mpeg"/>
+  </audio>
+
   return (
     <section className="lyricsPageWrap">
       <section className="lyricsWrap">
@@ -27,9 +37,7 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
           {songInfo.title_short}
           </h1>
           <h2 className="songDetails">{songInfo.artist.name}</h2>
-          <audio className="sample" controls>
-            <source src={songInfo.preview} type="audio/mpeg"/>
-          </audio>
+          {songInfo.preview && audioSample}
         </section>
         <p className="lyrics">{`${lyrics}`}</p>
       </section>
