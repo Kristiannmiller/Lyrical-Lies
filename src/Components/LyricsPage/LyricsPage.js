@@ -21,13 +21,15 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
   }
   return (
     <section className="lyricsPageWrap">
-      <section className="lyrics">
-        <h1>{songInfo.title_short}</h1>
-        <h2>{songInfo.artist.name}</h2>
-        <p>{lyrics}</p>
+      <section className="lyricsWrap">
+        <section className="songInfo">
+          <h1 className="songDetails">{songInfo.title_short}</h1>
+          <h2 className="songDetails">{songInfo.artist.name}</h2>
+        </section>
+        <p className="lyrics">{lyrics}</p>
       </section>
       <section className="commentsWrap">
-        <h2>Say What?!</h2>
+        <h2 className="commentHeader">Lyrical Lies:</h2>
         <section className="comments">
           <section className="cardContainer">
             <CommentCards songId={songInfo.id} comments={comments}/>
