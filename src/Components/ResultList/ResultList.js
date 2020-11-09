@@ -34,14 +34,15 @@ class ResultList extends Component {
     if(!this.state.results[0]){
       return <h2>{this.state.errorMessage}</h2>
     }
-    const resultData = this.state.results.map((result, i) => {
+    const resultData = this.state.results.reduce((acc, result, i) => {
       if( i < 5 ) {
-        return (
+        acc.push (
         <section key={i} onClick={this.handleClick} id={result.id} className="resultCard">
           <h1>{`${result.artist.name} - ${result.title_short}`}</h1>
         </section>
       )}
-    })
+      return acc
+    }, [])
     return (
       <section className="resultsWrap">
         <NavLink to="/lyrics">
