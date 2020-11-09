@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 import CommentCards from './CommentCards.js';
 
 describe('CommentCards', () => {
@@ -91,6 +92,66 @@ describe('CommentCards', () => {
       expect(comment3).not.toBeInTheDocument();
       const promptMessage = screen.getByText("No lyrical lies here yet. Add yours!")
       expect(promptMessage).toBeInTheDocument();
+    })
+    it('It should display the inactive favorite image when a comment is not a favorite', () => {
+      render (
+        <MemoryRouter>
+          <CommentCards
+            songId= {1}
+            comments= {[
+              {id: 1234, songId: 1, comment: 'test1', fave: false}
+            ]}
+            />
+        </MemoryRouter>
+      )
+      const commentsWrap = screen.getByTestId('commentCards')
+      expect(commentsWrap).toBeInTheDocument();
+      const comment1 = screen.getByText(`"test1"`)
+      expect(comment1).toBeInTheDocument();
+      const faveIcon = screen.getByAltText("inactive favorite icon")
+      expect(faveIcon).toBeInTheDocument();
+    })
+    it('It should display the active favorite image when a comment is a favorite', () => {
+      render (
+        <MemoryRouter>
+          <CommentCards
+            songId= {1}
+            comments= {[
+              {id: 1234, songId: 1, comment: 'test1', fave: true}
+            ]}
+            />
+        </MemoryRouter>
+      )
+      const commentsWrap = screen.getByTestId('commentCards')
+      expect(commentsWrap).toBeInTheDocument();
+      const comment1 = screen.getByText(`"test1"`)
+      expect(comment1).toBeInTheDocument();
+      const faveIcon = screen.getByAltText("active favorite icon")
+      expect(faveIcon).toBeInTheDocument();
+    })
+  })
+  describe('Integration Tests', () => {
+    it('Should invoke a given function when clicked', () => {
+      const mockedFunction = jest.fn()
+      render (
+        <MemoryRouter>
+          <CommentCards
+          songId= {1}
+          comments= {[
+            {id: 1234, songId: 1, comment: 'test1', fave: true}
+            ]}
+            updateComment={mockedFunction}
+          />
+        </MemoryRouter>
+      )
+      const commentsWrap = screen.getByTestId('commentCards')
+      expect(commentsWrap).toBeInTheDocument();
+      const comment1 = screen.getByText(`"test1"`)
+      expect(comment1).toBeInTheDocument();
+      const faveIcon = screen.getByAltText("active favorite icon")
+      expect(faveIcon).toBeInTheDocument();
+      userEvent.click(faveIcon);
+      expect(mockedFunction).toHaveBeenCalled()
     })
   })
 })
