@@ -2,6 +2,7 @@ import {Component} from 'react';
 import './ResultList.css';
 import { getSuggestions } from '../../apiCalls.js';
 import {NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 class ResultList extends Component {
   constructor(props) {
@@ -33,14 +34,15 @@ class ResultList extends Component {
     if(!this.state.results[0]){
       return <h2>{this.state.errorMessage}</h2>
     }
-    const resultData = this.state.results.map((result, i) => {
+    const resultData = this.state.results.reduce((acc, result, i) => {
       if( i < 5 ) {
-        return (
+        acc.push (
         <section key={i} onClick={this.handleClick} id={result.id} className="resultCard">
           <h1>{`${result.artist.name} - ${result.title_short}`}</h1>
         </section>
       )}
-    })
+      return acc
+    }, [])
     return (
       <section className="resultsWrap">
         <NavLink to="/lyrics">
@@ -51,3 +53,8 @@ class ResultList extends Component {
   }
 }
 export default ResultList
+
+ResultList.propTypes = {
+  input: PropTypes.string,
+  displayLyrics: PropTypes.func
+}

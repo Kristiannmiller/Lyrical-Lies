@@ -1,35 +1,73 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import CommentsForm from './CommentsForm.js';
+import userEvent from '@testing-library/user-event';
 
-test('works', () => {
-  expect(true).toBe(true);
-});
 
-// TESTING IDEAS ::
-
-//UNIT:
-// It should render a CommentsForm
-  //render component
-  //expect placeholder text "Share your misheard lyric with the world" to be in doc
-  //expect getbytext "submit" to be in the doc
-//It should display a user's input
-  //render component
-  //type into comment input
-  //assert that getByDisplayValue is in the doc
-//It should clear the input after submitting
-  //render component
-  //type into comment input
-  //click submit button
-  //assert that getByplaceholdertext.value to be ''
-
-//INTEGRATION:
-// It should fire a given function on onClick
-  //render component with mocked function
-  //type into comment commentInput
-  //click submit button
-  //assert that function was called
-//It should display a comment after it has been submitted
-  //render component
-  //type into commentInput
-  //click submit button
-  //expect comment text to be in doc
+describe('CommentsForm', () => {
+  describe('Unit Tests', () => {
+    it('Should render a Comment Form', () => {
+      render (
+        <MemoryRouter>
+          <CommentsForm />
+        </MemoryRouter>
+      )
+      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
+      const submitButton = screen.getByText("Submit")
+      expect(submitButton).toBeInTheDocument();
+      expect(formInput).toBeInTheDocument();
+    })
+    it('Should display a user input', () => {
+      render (
+        <MemoryRouter>
+          <CommentsForm />
+        </MemoryRouter>
+      )
+      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
+      const submitButton = screen.getByText("Submit")
+      expect(submitButton).toBeInTheDocument();
+      expect(formInput).toBeInTheDocument();
+      userEvent.type(formInput, 'testing');
+      const value = screen.getByDisplayValue('testing')
+      expect(value).toBeInTheDocument();
+    })
+    it('Should clear the input after submitting', () => {
+      const mockedFunction = jest.fn()
+      render (
+        <MemoryRouter>
+          <CommentsForm
+            submitComment={mockedFunction}
+          />
+        </MemoryRouter>
+      )
+      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
+      const submitButton = screen.getByText("Submit")
+      expect(submitButton).toBeInTheDocument();
+      expect(formInput).toBeInTheDocument();
+      userEvent.type(formInput, 'testing');
+      expect(formInput.value).toBe('testing')
+      userEvent.click(submitButton);
+      expect(formInput.value).toBe("")
+    })
+  })
+  describe('Integration Tests', () => {
+    it('Should invoke a given function when the submit button is clicked', () => {
+      const mockedFunction = jest.fn()
+      render (
+        <MemoryRouter>
+          <CommentsForm
+            submitComment={mockedFunction}
+          />
+        </MemoryRouter>
+      )
+      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
+      const submitButton = screen.getByText("Submit")
+      expect(submitButton).toBeInTheDocument();
+      expect(formInput).toBeInTheDocument();
+      userEvent.type(formInput, 'testing');
+      expect(formInput.value).toBe('testing')
+      userEvent.click(submitButton);
+      expect(mockedFunction).toHaveBeenCalledWith('testing')
+    })
+  })
+})

@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './HomePage.css';
+import PropTypes from 'prop-types'
 import ResultList from '../ResultList/ResultList.js'
 
 class HomePage extends Component {
@@ -31,3 +32,7 @@ class HomePage extends Component {
   }
 }
 export default HomePage;
+
+HomePage.propTypes = {
+  displayLyrics: PropTypes.func
+}

@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './CommentsForm.css'
 
 const CommentsForm = ({submitComment}) => {
+  const handleClick = (e) => {
+    e.preventDefault()
+    let comment = document.getElementById("commentInput").value
+    submitComment(comment)
+    document.getElementById("commentInput").value = ''
+  }
   return (
     <section className="commentFormWrap">
       <form>
@@ -11,9 +18,13 @@ const CommentsForm = ({submitComment}) => {
           type="text"
           autoComplete="off"
           placeholder="Share your misheard lyric with the world"></input>
-          <button onClick={submitComment}>Submit</button>
+          <button onClick={handleClick}>Submit</button>
       </form>
     </section>
   )
 }
 export default CommentsForm
+
+CommentsForm.propTypes = {
+  submitComment: PropTypes.func
+}

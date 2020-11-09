@@ -7,6 +7,8 @@ import home from '../../Assets/homeIcon.png'
 import LandingPage from '../LandingPage/LandingPage.js'
 import HomePage from '../HomePage/HomePage.js'
 import LyricsPage from '../LyricsPage/LyricsPage.js'
+import FavesPage from '../FavesPage/FavesPage.js'
+
 import { getLyrics } from '../../apiCalls.js'
 
 class App extends Component {
@@ -35,11 +37,9 @@ class App extends Component {
       }))
     }
   }
-  submitComment = (e) => {
-    e.preventDefault()
-    const newComment = {songId: this.state.songInfo.id, comment: e.target.previousSibling.value}
+  submitComment = (comment) => {
+    const newComment = {songId: this.state.songInfo.id, comment: comment}
     this.setState({comments: [...this.state.comments, newComment]})
-    e.target.previousSibling.value = ''
   }
   render() {
     return (
@@ -78,6 +78,11 @@ class App extends Component {
         <Switch>
           <Route path='/home'>
             <HomePage displayLyrics={this.displayLyrics}/>
+          </Route>
+          <Route path='/faves'>
+            <FavesPage
+              comments={this.state.comments}
+            />
           </Route>
           <Route path='/lyrics'>
             <LyricsPage
