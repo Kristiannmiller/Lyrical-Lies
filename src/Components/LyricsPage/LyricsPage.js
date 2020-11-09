@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../Assets/lyricalLiesLogo.png'
 import './LyricsPage.css'
+import PropTypes from 'prop-types'
 import CommentsForm from '../CommentsForm/CommentsForm.js'
 import CommentCards from '../CommentCards/CommentCards.js'
 
@@ -13,7 +14,7 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
   }
   if(error || !lyrics) {
     return (
-      <section className="landingWrap">
+      <section data-testid="landingWrap" className="landingWrap">
         <img
           className="welcomeLogo"
           title="Welcome to Lyrical Lies"
@@ -28,7 +29,7 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
 
   let audioSample =
   <audio onClick={onTrackChange()} className="sample" controls>
-    <source src={songInfo.preview} type="audio/mpeg"/>
+    <source data-testid="audioSample" src={songInfo.preview} type="audio/mpeg"/>
   </audio>
 
   return (
@@ -56,3 +57,11 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
   )
 }
 export default LyricsPage
+
+LyricsPage.propTypes = {
+  songInfo: PropTypes.object,
+  lyrics: PropTypes.string,
+  error: PropTypes.string,
+  submitComment: PropTypes.func,
+  comments: PropTypes.array
+}
