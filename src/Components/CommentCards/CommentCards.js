@@ -20,6 +20,7 @@ const CommentCards = ({ songId, comments, updateComment }) => {
               onClick={updateComment}
               className="faveIcon"
               src={match.fave ? faveActive : faveIcon}
+              alt={match.fave ? "active favorite icon" : "inactive favorite icon"}
             />
             <h1>"{match.comment}"</h1>
           </section>
