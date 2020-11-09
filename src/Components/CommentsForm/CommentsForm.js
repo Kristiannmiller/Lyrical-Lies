@@ -6,8 +6,12 @@ const CommentsForm = ({submitComment}) => {
   const handleClick = (e) => {
     e.preventDefault()
     let comment = document.getElementById("commentInput").value
-    submitComment(comment)
-    document.getElementById("commentInput").value = ''
+    if(comment !== '') {
+      submitComment(comment)
+      document.getElementById("commentInput").value = ''
+    } else {
+      alert("Please type in a misheard lyric to post")
+    }
   }
   return (
     <section className="commentFormWrap">
