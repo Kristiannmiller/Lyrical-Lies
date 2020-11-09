@@ -2,6 +2,7 @@ import {Component} from 'react';
 import './ResultList.css';
 import { getSuggestions } from '../../apiCalls.js';
 import {NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 class ResultList extends Component {
   constructor(props) {
@@ -51,3 +52,8 @@ class ResultList extends Component {
   }
 }
 export default ResultList
+
+ResultList.propTypes = {
+  input: PropTypes.string,
+  displayLyrics: PropTypes.func
+}
