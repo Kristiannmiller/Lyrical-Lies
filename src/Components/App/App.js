@@ -8,7 +8,6 @@ import LandingPage from '../LandingPage/LandingPage.js'
 import HomePage from '../HomePage/HomePage.js'
 import LyricsPage from '../LyricsPage/LyricsPage.js'
 import FavesPage from '../FavesPage/FavesPage.js'
-
 import { getLyrics } from '../../apiCalls.js'
 
 class App extends Component {
@@ -38,8 +37,20 @@ class App extends Component {
     }
   }
   submitComment = (comment) => {
-    const newComment = {songId: this.state.songInfo.id, comment: comment}
+    const newComment = {id: Date.now(), songId: this.state.songInfo.id, comment: comment, fave: false}
     this.setState({comments: [...this.state.comments, newComment]})
+  }
+  updateComment = (event) => {
+    const commentId = +event.target.id;
+    const updatedComments =
+    this.state.comments.map(comment => {
+      console.log("commentid", commentId, "comment", comment)
+      if(comment.id === commentId) {
+        comment.fave = !comment.fave
+      }
+      return comment
+    })
+    this.setState({comments: updatedComments})
   }
   render() {
     return (
@@ -91,6 +102,7 @@ class App extends Component {
               error={this.state.error}
               submitComment={this.submitComment}
               comments={this.state.comments}
+              updateComment={this.updateComment}
             />
           </Route>
           <Route exactPath='/'>

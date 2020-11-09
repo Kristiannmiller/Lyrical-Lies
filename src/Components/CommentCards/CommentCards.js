@@ -1,9 +1,11 @@
 import React from 'react';
 import './CommentCards.css'
+import faveIcon from '../../Assets/FaveIcon.svg'
+import faveActive from '../../Assets/FaveActive.svg'
 import PropTypes from 'prop-types'
 
 
-const CommentCards = ({ songId, comments }) => {
+const CommentCards = ({ songId, comments, updateComment }) => {
   let content
   if(!comments.length) {
     content = <h1>No lyrical lies here yet. Add yours!</h1>
@@ -13,6 +15,12 @@ const CommentCards = ({ songId, comments }) => {
       content = matches.map((match, index) => {
         return (
           <section key={index} className="commentCard">
+            <img
+              id={match.id}
+              onClick={updateComment}
+              className="faveIcon"
+              src={match.fave ? faveActive : faveIcon}
+            />
             <h1>"{match.comment}"</h1>
           </section>
         )

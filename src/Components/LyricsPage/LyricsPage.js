@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import CommentsForm from '../CommentsForm/CommentsForm.js'
 import CommentCards from '../CommentCards/CommentCards.js'
 
-const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
+const LyricsPage = ({songInfo, lyrics, error, submitComment, comments, updateComment}) => {
   const onTrackChange = () => {
     const audio = document.getElementsByClassName("sample")[0]
     if(audio) {
@@ -48,7 +48,7 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments}) => {
         <h2 className="commentHeader">Lyrical Lies:</h2>
         <section className="comments">
           <section className="cardContainer">
-            <CommentCards songId={songInfo.id} comments={comments}/>
+            <CommentCards songId={songInfo.id} comments={comments} updateComment={updateComment}/>
           </section>
           <CommentsForm songId={songInfo.id} submitComment={submitComment}/>
         </section>
