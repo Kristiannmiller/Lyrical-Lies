@@ -49,6 +49,25 @@ describe('CommentsForm', () => {
       userEvent.click(submitButton);
       expect(formInput.value).toBe("")
     })
+    it('Should not allow a user to post a blank comment', () => {
+      const mockedFunction = jest.fn()
+      window.alert = jest.fn()
+      render (
+        <MemoryRouter>
+          <CommentsForm
+            submitComment={mockedFunction}
+          />
+        </MemoryRouter>
+      )
+      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
+      const submitButton = screen.getByText("Submit")
+      expect(submitButton).toBeInTheDocument();
+      expect(formInput).toBeInTheDocument();
+      userEvent.click(submitButton);
+      const emptyComment = screen.queryByText(`""`)
+      expect(window.alert).toHaveBeenCalled();
+      expect(emptyComment).not.toBeInTheDocument();
+    })
   })
   describe('Integration Tests', () => {
     it('Should invoke a given function when the submit button is clicked', () => {
