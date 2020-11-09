@@ -35,11 +35,9 @@ class App extends Component {
       }))
     }
   }
-  submitComment = (e) => {
-    e.preventDefault()
-    const newComment = {songId: this.state.songInfo.id, comment: e.target.previousSibling.value}
+  submitComment = (comment) => {
+    const newComment = {songId: this.state.songInfo.id, comment: comment}
     this.setState({comments: [...this.state.comments, newComment]})
-    e.target.previousSibling.value = ''
   }
   render() {
     return (
