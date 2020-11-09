@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import LyricsPage from './LyricsPage.js';
-import { getSuggestions } from '../../apiCalls.js';
-jest.mock('../../apiCalls.js');
 
 describe('LyricsPage', () => {
   describe('Unit Tests', () => {
