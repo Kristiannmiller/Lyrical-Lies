@@ -37,7 +37,15 @@ class App extends Component {
     }
   }
   submitComment = (comment) => {
-    const newComment = {id: Date.now(), songId: this.state.songInfo.id, comment: comment, fave: false}
+    const newComment = {
+      id: Date.now(),
+      songId: this.state.songInfo.id,
+      songTitle: this.state.songInfo.title_short,
+      artist: this.state.songInfo.artist.name,
+      comment: comment,
+      fave: false
+    }
+    console.log(newComment);
     this.setState({comments: [...this.state.comments, newComment]})
   }
   updateComment = (event) => {
@@ -93,6 +101,7 @@ class App extends Component {
           <Route path='/faves'>
             <FavesPage
               comments={this.state.comments}
+              updateComment={this.updateComment}
             />
           </Route>
           <Route path='/lyrics'>
