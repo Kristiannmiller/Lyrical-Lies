@@ -14,7 +14,7 @@ const FavesPage = ({ comments, updateComment }) => {
   }
   if (!comments.length || !faveComments.length) {
     cards.push(
-      <section className="noFaveMessage">
+      <section key={1} className="noFaveMessage">
         <img
           className="welcomeLogo"
           title="Welcome to Lyrical Lies"
