@@ -10,10 +10,10 @@ describe('LandingPage', () => {
           <LandingPage />
         </MemoryRouter>
       )
-      const logo = screen.getByAltText("welcome to Lyrical Lies")
-      const slogan = screen.getByTestId("slogan")
-      const intro = screen.getByTestId("intro")
-      const prompt = screen.getByTestId("prompt")
+      const logo = screen.getByAltText('welcome to Lyrical Lies');
+      const slogan = screen.getByTestId('slogan');
+      const intro = screen.getByTestId('intro');
+      const prompt = screen.getByTestId('prompt');
       expect(logo).toBeInTheDocument();
       expect(slogan).toBeInTheDocument();
       expect(intro).toBeInTheDocument();

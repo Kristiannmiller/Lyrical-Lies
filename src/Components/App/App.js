@@ -8,17 +8,18 @@ import LandingPage from '../LandingPage/LandingPage.js'
 import HomePage from '../HomePage/HomePage.js'
 import LyricsPage from '../LyricsPage/LyricsPage.js'
 import FavesPage from '../FavesPage/FavesPage.js'
-
 import { getLyrics } from '../../apiCalls.js'
+import { comments } from '../../CommentsDataset/CommentsData.js'
+
 
 class App extends Component {
   constructor() {
     super()
     this.state= {
       songInfo: {},
-      lyrics: "",
-      error: "",
-      comments: []
+      lyrics: '',
+      error: '',
+      comments: comments
     }
   }
   displayLyrics = async (songInfo) => {
@@ -38,8 +39,26 @@ class App extends Component {
     }
   }
   submitComment = (comment) => {
-    const newComment = {songId: this.state.songInfo.id, comment: comment}
+    const newComment = {
+      id: Date.now(),
+      songId: this.state.songInfo.id,
+      songTitle: this.state.songInfo.title_short,
+      artist: this.state.songInfo.artist.name,
+      comment: comment,
+      fave: false
+    }
     this.setState({comments: [...this.state.comments, newComment]})
+  }
+  updateComment = (event) => {
+    const commentId = +event.target.id;
+    const updatedComments =
+    this.state.comments.map(comment => {
+      if(comment.id === commentId) {
+        comment.fave = !comment.fave
+      }
+      return comment
+    })
+    this.setState({comments: updatedComments})
   }
   render() {
     return (
@@ -47,29 +66,29 @@ class App extends Component {
         <main>
           <header>
             <img
-            className="logo"
-            title="Lyrical Lies Logo"
+            className='logo'
+            title='Lyrical Lies Logo'
             src={logo}
-            alt="Lyrical Lies Logo"
+            alt='Lyrical Lies Logo'
             />
-            <section className="navigationWrap">
+            <section className='navigationWrap'>
               <Route>
-                <NavLink id="homeButton" activeClassName="activeHomeButton" to='/home'>
+                <NavLink id='homeButton' activeClassName='activeHomeButton' to='/home'>
                   <img
-                  className="navImg"
-                  title="Return to Homepage"
+                  className='navImg'
+                  title='Return to Homepage'
                   src={home}
-                  alt="Navigate back to home page"
+                  alt='Navigate back to home page'
                   />
                 </NavLink>
               </Route>
               <Route>
-                <NavLink id="favesButton" activeClassName="activeFavesButton" to='/faves'>
+                <NavLink id='favesButton' activeClassName='activeFavesButton' to='/faves'>
                   <img
-                  className="navImg"
-                  title="View Favorite Lyrics"
+                  className='navImg'
+                  title='View Favorite Lyrics'
                   src={faves}
-                  alt="Navigate to favorites page"
+                  alt='Navigate to favorites page'
                   />
                 </NavLink>
               </Route>
@@ -82,6 +101,7 @@ class App extends Component {
           <Route path='/faves'>
             <FavesPage
               comments={this.state.comments}
+              updateComment={this.updateComment}
             />
           </Route>
           <Route path='/lyrics'>
@@ -91,6 +111,7 @@ class App extends Component {
               error={this.state.error}
               submitComment={this.submitComment}
               comments={this.state.comments}
+              updateComment={this.updateComment}
             />
           </Route>
           <Route exactPath='/'>

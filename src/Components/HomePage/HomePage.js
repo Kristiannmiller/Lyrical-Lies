@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './HomePage.css';
-import PropTypes from 'prop-types'
-import ResultList from '../ResultList/ResultList.js'
+import PropTypes from 'prop-types';
+import ResultList from '../ResultList/ResultList.js';
 
 class HomePage extends Component {
   constructor() {
@@ -16,15 +16,15 @@ class HomePage extends Component {
   }
   render() {
     return (
-      <section className="searchWrap">
+      <section className='searchWrap'>
         <form>
           <input
-            name="search"
+            name='search'
             onChange={this.handleChange}
-            id="searchInput"
-            type="text"
-            autoComplete="off"
-            placeholder="Enter song title followed by artist"></input>
+            id='searchInput'
+            type='text'
+            autoComplete='off'
+            placeholder='Enter song title followed by artist'></input>
         </form>
         <ResultList input={this.state.input} displayLyrics={this.props.displayLyrics}/>
       </section>

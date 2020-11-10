@@ -2,7 +2,7 @@ import {Component} from 'react';
 import './ResultList.css';
 import { getSuggestions } from '../../apiCalls.js';
 import {NavLink} from 'react-router-dom';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 class ResultList extends Component {
   constructor(props) {
@@ -37,15 +37,15 @@ class ResultList extends Component {
     const resultData = this.state.results.reduce((acc, result, i) => {
       if( i < 5 ) {
         acc.push (
-        <section key={i} onClick={this.handleClick} id={result.id} className="resultCard">
+        <section key={i} onClick={this.handleClick} id={result.id} className='resultCard'>
           <h1>{`${result.artist.name} - ${result.title_short}`}</h1>
         </section>
       )}
       return acc
     }, [])
     return (
-      <section className="resultsWrap">
-        <NavLink to="/lyrics">
+      <section className='resultsWrap'>
+        <NavLink to='/lyrics'>
           {resultData}
         </NavLink>
       </section>
