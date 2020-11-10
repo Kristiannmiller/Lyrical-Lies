@@ -1,8 +1,8 @@
 import React from 'react';
-import './CommentCards.css'
-import faveIcon from '../../Assets/FaveIcon.svg'
-import faveActive from '../../Assets/FaveActive.svg'
-import PropTypes from 'prop-types'
+import './CommentCards.css';
+import faveIcon from '../../Assets/FaveIcon.svg';
+import faveActive from '../../Assets/FaveActive.svg';
+import PropTypes from 'prop-types';
 
 
 const CommentCards = ({ songId, comments, updateComment }) => {
@@ -14,13 +14,13 @@ const CommentCards = ({ songId, comments, updateComment }) => {
     if(matches.length) {
       content = matches.map((match, index) => {
         return (
-          <section key={index} className="commentCard">
+          <section key={index} className='commentCard'>
             <img
               id={match.id}
               onClick={updateComment}
-              className="faveIcon"
+              className='faveIcon'
               src={match.fave ? faveActive : faveIcon}
-              alt={match.fave ? "active favorite icon" : "inactive favorite icon"}
+              alt={match.fave ? 'active favorite icon' : 'inactive favorite icon'}
             />
             <h1>"{match.comment}"</h1>
           </section>
@@ -31,7 +31,7 @@ const CommentCards = ({ songId, comments, updateComment }) => {
     }
   }
   return (
-    <section data-testid="commentCards" className="cardsContainer">
+    <section data-testid='commentCards' className='cardsContainer'>
       {content}
     </section>
   )

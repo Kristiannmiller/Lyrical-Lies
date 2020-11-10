@@ -1,9 +1,9 @@
 import React from 'react';
-import './FavesPage.css'
-import faveIcon from '../../Assets/FaveIcon.svg'
-import faveActive from '../../Assets/FaveActive.svg'
-import logo from '../../Assets/lyricalLiesLogo.png'
-import PropTypes from 'prop-types'
+import './FavesPage.css';
+import faveIcon from '../../Assets/FaveIcon.svg';
+import faveActive from '../../Assets/FaveActive.svg';
+import logo from '../../Assets/lyricalLiesLogo.png';
+import PropTypes from 'prop-types';
 
 
 const FavesPage = ({ comments, updateComment }) => {
@@ -14,38 +14,38 @@ const FavesPage = ({ comments, updateComment }) => {
   }
   if (!comments.length || !faveComments.length) {
     cards.push(
-      <section key={1} className="noFaveMessage">
+      <section key={1} className='noFaveMessage'>
         <img
-          className="welcomeLogo"
-          title="Welcome to Lyrical Lies"
+          className='welcomeLogo'
+          title='Welcome to Lyrical Lies'
           src={logo}
-          alt="Lyrical Lies logo"
+          alt='Lyrical Lies logo'
         />
-        <h2 className="message">You have no favorite lyrical lies! Go find some!</h2>
+        <h2 className='message'>You have no favorite lyrical lies! Go find some!</h2>
       </section>
     )
   } else {
     cards = faveComments.map((comment, index) => {
       return (
-        <section key={index} className="faveCard">
+        <section key={index} className='faveCard'>
           <img
             id={comment.id}
             onClick={updateComment}
-            className="faveIcon"
+            className='faveIcon'
             src={comment.fave ? faveActive : faveIcon}
-            alt={comment.fave ? "active favorite icon" : "inactive favorite icon"}
+            alt={comment.fave ? 'active favorite icon' : 'inactive favorite icon'}
           />
-          <h1 className="faveTitle">{comment.songTitle}</h1>
-          <h2 className="faveArtist">{comment.artist}</h2>
-          <h3 className="faveComment">"{comment.comment}"</h3>
+          <h1 className='faveTitle'>{comment.songTitle}</h1>
+          <h2 className='faveArtist'>{comment.artist}</h2>
+          <h3 className='faveComment'>"{comment.comment}"</h3>
         </section>
       )
     })
   }
   return (
-    <section data-testid="favesWrap" className="favesWrap">
-      <h1 className="faveHeader">{faveComments && 'Your favorite lyrical lies'}</h1>
-      <section className="faveCardContainer">
+    <section data-testid='favesWrap' className='favesWrap'>
+      <h1 className='faveHeader'>{faveComments && 'Your favorite lyrical lies'}</h1>
+      <section className='faveCardContainer'>
         {cards}
       </section>
     </section>

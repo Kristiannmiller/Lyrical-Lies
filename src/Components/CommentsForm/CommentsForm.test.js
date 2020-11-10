@@ -12,8 +12,8 @@ describe('CommentsForm', () => {
           <CommentsForm />
         </MemoryRouter>
       )
-      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
-      const submitButton = screen.getByText("Submit")
+      const formInput = screen.getByPlaceholderText('Share your misheard lyric with the world');
+      const submitButton = screen.getByText('Submit');
       expect(submitButton).toBeInTheDocument();
       expect(formInput).toBeInTheDocument();
     })
@@ -23,16 +23,16 @@ describe('CommentsForm', () => {
           <CommentsForm />
         </MemoryRouter>
       )
-      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
-      const submitButton = screen.getByText("Submit")
+      const formInput = screen.getByPlaceholderText('Share your misheard lyric with the world');
+      const submitButton = screen.getByText('Submit');
       expect(submitButton).toBeInTheDocument();
       expect(formInput).toBeInTheDocument();
       userEvent.type(formInput, 'testing');
-      const value = screen.getByDisplayValue('testing')
+      const value = screen.getByDisplayValue('testing');
       expect(value).toBeInTheDocument();
     })
     it('Should clear the input after submitting', () => {
-      const mockedFunction = jest.fn()
+      const mockedFunction = jest.fn();
       render (
         <MemoryRouter>
           <CommentsForm
@@ -40,14 +40,14 @@ describe('CommentsForm', () => {
           />
         </MemoryRouter>
       )
-      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
-      const submitButton = screen.getByText("Submit")
+      const formInput = screen.getByPlaceholderText('Share your misheard lyric with the world');
+      const submitButton = screen.getByText('Submit');
       expect(submitButton).toBeInTheDocument();
       expect(formInput).toBeInTheDocument();
       userEvent.type(formInput, 'testing');
-      expect(formInput.value).toBe('testing')
+      expect(formInput.value).toBe('testing');
       userEvent.click(submitButton);
-      expect(formInput.value).toBe("")
+      expect(formInput.value).toBe('');
     })
     it('Should not allow a user to post a blank comment', () => {
       const mockedFunction = jest.fn()
@@ -59,12 +59,12 @@ describe('CommentsForm', () => {
           />
         </MemoryRouter>
       )
-      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
-      const submitButton = screen.getByText("Submit")
+      const formInput = screen.getByPlaceholderText('Share your misheard lyric with the world');
+      const submitButton = screen.getByText('Submit');
       expect(submitButton).toBeInTheDocument();
       expect(formInput).toBeInTheDocument();
       userEvent.click(submitButton);
-      const emptyComment = screen.queryByText(`""`)
+      const emptyComment = screen.queryByText(`""`);
       expect(window.alert).toHaveBeenCalled();
       expect(emptyComment).not.toBeInTheDocument();
     })
@@ -79,14 +79,14 @@ describe('CommentsForm', () => {
           />
         </MemoryRouter>
       )
-      const formInput = screen.getByPlaceholderText("Share your misheard lyric with the world")
-      const submitButton = screen.getByText("Submit")
+      const formInput = screen.getByPlaceholderText('Share your misheard lyric with the world');
+      const submitButton = screen.getByText('Submit');
       expect(submitButton).toBeInTheDocument();
       expect(formInput).toBeInTheDocument();
       userEvent.type(formInput, 'testing');
-      expect(formInput.value).toBe('testing')
+      expect(formInput.value).toBe('testing');
       userEvent.click(submitButton);
-      expect(mockedFunction).toHaveBeenCalledWith('testing')
+      expect(mockedFunction).toHaveBeenCalledWith('testing');
     })
   })
 })

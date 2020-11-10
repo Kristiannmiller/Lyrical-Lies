@@ -17,8 +17,8 @@ class App extends Component {
     super()
     this.state= {
       songInfo: {},
-      lyrics: "",
-      error: "",
+      lyrics: '',
+      error: '',
       comments: comments
     }
   }
@@ -47,14 +47,12 @@ class App extends Component {
       comment: comment,
       fave: false
     }
-    console.log(newComment);
     this.setState({comments: [...this.state.comments, newComment]})
   }
   updateComment = (event) => {
     const commentId = +event.target.id;
     const updatedComments =
     this.state.comments.map(comment => {
-      console.log("commentid", commentId, "comment", comment)
       if(comment.id === commentId) {
         comment.fave = !comment.fave
       }
@@ -68,29 +66,29 @@ class App extends Component {
         <main>
           <header>
             <img
-            className="logo"
-            title="Lyrical Lies Logo"
+            className='logo'
+            title='Lyrical Lies Logo'
             src={logo}
-            alt="Lyrical Lies Logo"
+            alt='Lyrical Lies Logo'
             />
-            <section className="navigationWrap">
+            <section className='navigationWrap'>
               <Route>
-                <NavLink id="homeButton" activeClassName="activeHomeButton" to='/home'>
+                <NavLink id='homeButton' activeClassName='activeHomeButton' to='/home'>
                   <img
-                  className="navImg"
-                  title="Return to Homepage"
+                  className='navImg'
+                  title='Return to Homepage'
                   src={home}
-                  alt="Navigate back to home page"
+                  alt='Navigate back to home page'
                   />
                 </NavLink>
               </Route>
               <Route>
-                <NavLink id="favesButton" activeClassName="activeFavesButton" to='/faves'>
+                <NavLink id='favesButton' activeClassName='activeFavesButton' to='/faves'>
                   <img
-                  className="navImg"
-                  title="View Favorite Lyrics"
+                  className='navImg'
+                  title='View Favorite Lyrics'
                   src={faves}
-                  alt="Navigate to favorites page"
+                  alt='Navigate to favorites page'
                   />
                 </NavLink>
               </Route>

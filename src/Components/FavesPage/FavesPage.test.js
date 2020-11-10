@@ -15,8 +15,8 @@ describe('FavesPage', () => {
           />
         </MemoryRouter>
       )
-      const favesWrap = screen.getByTestId('favesWrap')
-      expect(favesWrap).toBeInTheDocument()
+      const favesWrap = screen.getByTestId('favesWrap');
+      expect(favesWrap).toBeInTheDocument();
     })
     it('Should display comments', () => {
       const mockedFunction = jest.fn()
@@ -35,14 +35,14 @@ describe('FavesPage', () => {
           />
         </MemoryRouter>
       )
-      const favesWrap = screen.getByTestId('favesWrap')
-      const songTitle = screen.getByText('Tiny Dancer')
-      const artistName = screen.getByText('Elton John')
-      const comment = screen.getByText(`"Hold me closer, Tony Danza"`)
-      expect(favesWrap).toBeInTheDocument()
-      expect(songTitle).toBeInTheDocument()
-      expect(artistName).toBeInTheDocument()
-      expect(comment).toBeInTheDocument()
+      const favesWrap = screen.getByTestId('favesWrap');
+      const songTitle = screen.getByText('Tiny Dancer');
+      const artistName = screen.getByText('Elton John');
+      const comment = screen.getByText(`"Hold me closer, Tony Danza"`);
+      expect(favesWrap).toBeInTheDocument();
+      expect(songTitle).toBeInTheDocument();
+      expect(artistName).toBeInTheDocument();
+      expect(comment).toBeInTheDocument();
     })
     it('Should only display favorited comments', () => {
       const mockedFunction = jest.fn()
@@ -67,20 +67,20 @@ describe('FavesPage', () => {
           />
         </MemoryRouter>
       )
-      const favesWrap = screen.getByTestId('favesWrap')
-      const songTitle1 = screen.getByText('Tiny Dancer')
-      const artistName1 = screen.getByText('Elton John')
-      const comment1 = screen.getByText(`"Hold me closer, Tony Danza"`)
-      const songTitle2 = screen.queryByText('Two Tickets To Paradise')
-      const artistName2 = screen.queryByText('Eddie Money')
-      const comment2 = screen.queryByText(`"I've got two chickens to paralise"`)
-      expect(favesWrap).toBeInTheDocument()
-      expect(songTitle1).toBeInTheDocument()
-      expect(artistName1).toBeInTheDocument()
-      expect(comment1).toBeInTheDocument()
-      expect(songTitle2).not.toBeInTheDocument()
-      expect(artistName2).not.toBeInTheDocument()
-      expect(comment2).not.toBeInTheDocument()
+      const favesWrap = screen.getByTestId('favesWrap');
+      const songTitle1 = screen.getByText('Tiny Dancer');
+      const artistName1 = screen.getByText('Elton John');
+      const comment1 = screen.getByText(`"Hold me closer, Tony Danza"`);
+      const songTitle2 = screen.queryByText('Two Tickets To Paradise');
+      const artistName2 = screen.queryByText('Eddie Money');
+      const comment2 = screen.queryByText(`"I've got two chickens to paralise"`);
+      expect(favesWrap).toBeInTheDocument();
+      expect(songTitle1).toBeInTheDocument();
+      expect(artistName1).toBeInTheDocument();
+      expect(comment1).toBeInTheDocument();
+      expect(songTitle2).not.toBeInTheDocument();
+      expect(artistName2).not.toBeInTheDocument();
+      expect(comment2).not.toBeInTheDocument();
     })
     it('Should display a prompt if there are no comments', () => {
       const mockedFunction = jest.fn()
@@ -92,12 +92,12 @@ describe('FavesPage', () => {
           />
         </MemoryRouter>
       )
-      const favesWrap = screen.getByTestId('favesWrap')
-      const logo = screen.getByAltText('Lyrical Lies logo')
-      const prompt = screen.getByText('You have no favorite lyrical lies! Go find some!')
-      expect(favesWrap).toBeInTheDocument()
-      expect(logo).toBeInTheDocument()
-      expect(prompt).toBeInTheDocument()
+      const favesWrap = screen.getByTestId('favesWrap');
+      const logo = screen.getByAltText('Lyrical Lies logo');
+      const prompt = screen.getByText('You have no favorite lyrical lies! Go find some!');
+      expect(favesWrap).toBeInTheDocument();
+      expect(logo).toBeInTheDocument();
+      expect(prompt).toBeInTheDocument();
     })
   })
   describe('Unit Tests', () => {
@@ -118,12 +118,12 @@ describe('FavesPage', () => {
           />
         </MemoryRouter>
       )
-      const favesWrap = screen.getByTestId('favesWrap')
-      const faveIcon = screen.getByAltText('active favorite icon')
-      expect(favesWrap).toBeInTheDocument()
-      expect(faveIcon).toBeInTheDocument()
-      userEvent.click(faveIcon)
-      expect(mockedFunction).toHaveBeenCalled()
+      const favesWrap = screen.getByTestId('favesWrap');
+      const faveIcon = screen.getByAltText('active favorite icon');
+      expect(favesWrap).toBeInTheDocument();
+      expect(faveIcon).toBeInTheDocument();
+      userEvent.click(faveIcon);
+      expect(mockedFunction).toHaveBeenCalled();
     })
   })
 })

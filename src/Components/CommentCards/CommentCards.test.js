@@ -48,9 +48,9 @@ describe('CommentCards', () => {
       )
       const commentsWrap = screen.getByTestId('commentCards')
       expect(commentsWrap).toBeInTheDocument();
-      const comment1 = screen.getByText(`"test1"`)
-      const comment2 = screen.queryByText(`"test2"`)
-      const comment3 = screen.getByText(`"test3"`)
+      const comment1 = screen.getByText(`"test1"`);
+      const comment2 = screen.queryByText(`"test2"`);
+      const comment3 = screen.getByText(`"test3"`);
       expect(comment1).toBeInTheDocument();
       expect(comment3).toBeInTheDocument();
       expect(comment2).not.toBeInTheDocument();
@@ -66,7 +66,7 @@ describe('CommentCards', () => {
       )
       const commentsWrap = screen.getByTestId('commentCards')
       expect(commentsWrap).toBeInTheDocument();
-      const promptMessage = screen.getByText("No lyrical lies here yet. Add yours!")
+      const promptMessage = screen.getByText('No lyrical lies here yet. Add yours!')
       expect(promptMessage).toBeInTheDocument();
     })
     it('It should display a prompt to comment if there are no matching comments', () => {
@@ -82,15 +82,15 @@ describe('CommentCards', () => {
             />
         </MemoryRouter>
       )
-      const commentsWrap = screen.getByTestId('commentCards')
+      const commentsWrap = screen.getByTestId('commentCards');
       expect(commentsWrap).toBeInTheDocument();
-      const comment1 = screen.queryByText(`"test1"`)
-      const comment2 = screen.queryByText(`"test2"`)
-      const comment3 = screen.queryByText(`"test3"`)
+      const comment1 = screen.queryByText(`"test1"`);
+      const comment2 = screen.queryByText(`"test2"`);
+      const comment3 = screen.queryByText(`"test3"`);
       expect(comment1).not.toBeInTheDocument();
       expect(comment2).not.toBeInTheDocument();
       expect(comment3).not.toBeInTheDocument();
-      const promptMessage = screen.getByText("No lyrical lies here yet. Add yours!")
+      const promptMessage = screen.getByText('No lyrical lies here yet. Add yours!');
       expect(promptMessage).toBeInTheDocument();
     })
     it('It should display the inactive favorite image when a comment is not a favorite', () => {
@@ -104,11 +104,11 @@ describe('CommentCards', () => {
             />
         </MemoryRouter>
       )
-      const commentsWrap = screen.getByTestId('commentCards')
+      const commentsWrap = screen.getByTestId('commentCards');
       expect(commentsWrap).toBeInTheDocument();
-      const comment1 = screen.getByText(`"test1"`)
+      const comment1 = screen.getByText(`"test1"`);
       expect(comment1).toBeInTheDocument();
-      const faveIcon = screen.getByAltText("inactive favorite icon")
+      const faveIcon = screen.getByAltText("inactive favorite icon");
       expect(faveIcon).toBeInTheDocument();
     })
     it('It should display the active favorite image when a comment is a favorite', () => {
@@ -122,11 +122,11 @@ describe('CommentCards', () => {
             />
         </MemoryRouter>
       )
-      const commentsWrap = screen.getByTestId('commentCards')
+      const commentsWrap = screen.getByTestId('commentCards');
       expect(commentsWrap).toBeInTheDocument();
-      const comment1 = screen.getByText(`"test1"`)
+      const comment1 = screen.getByText(`"test1"`);
       expect(comment1).toBeInTheDocument();
-      const faveIcon = screen.getByAltText("active favorite icon")
+      const faveIcon = screen.getByAltText('active favorite icon');
       expect(faveIcon).toBeInTheDocument();
     })
   })
@@ -144,14 +144,14 @@ describe('CommentCards', () => {
           />
         </MemoryRouter>
       )
-      const commentsWrap = screen.getByTestId('commentCards')
+      const commentsWrap = screen.getByTestId('commentCards');
       expect(commentsWrap).toBeInTheDocument();
-      const comment1 = screen.getByText(`"test1"`)
+      const comment1 = screen.getByText(`"test1"`);
       expect(comment1).toBeInTheDocument();
-      const faveIcon = screen.getByAltText("active favorite icon")
+      const faveIcon = screen.getByAltText('active favorite icon');
       expect(faveIcon).toBeInTheDocument();
       userEvent.click(faveIcon);
-      expect(mockedFunction).toHaveBeenCalled()
+      expect(mockedFunction).toHaveBeenCalled();
     })
   })
 })
