@@ -44,7 +44,6 @@ const FavesPage = ({ comments, updateComment }) => {
   }
   return (
     <section data-testid='favesWrap' className='favesWrap'>
-      <h1 className='faveHeader'>{faveComments && 'Your favorite lyrical lies'}</h1>
       <section className='faveCardContainer'>
         {cards}
       </section>
