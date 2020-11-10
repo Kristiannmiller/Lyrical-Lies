@@ -1,4 +1,5 @@
 {
+  "homepage": "http://kristiannmiller.github.io/lyrical-lies",
   "name": "lyrical-lies",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +14,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +42,7 @@
   "devDependencies": {
     "@testing-library/dom": "^7.26.5",
     "@testing-library/user-event": "^12.2.0",
+    "gh-pages": "^3.1.0",
     "sass": "^1.29.0"
   }
 }
