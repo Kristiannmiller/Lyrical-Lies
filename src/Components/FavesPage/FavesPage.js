@@ -19,7 +19,7 @@ const FavesPage = ({ comments, updateComment }) => {
           className="welcomeLogo"
           title="Welcome to Lyrical Lies"
           src={logo}
-          alt="welcome to Lyrical Lies"
+          alt="Lyrical Lies logo"
         />
         <h2 className="message">You have no favorite lyrical lies! Go find some!</h2>
       </section>
@@ -55,5 +55,6 @@ const FavesPage = ({ comments, updateComment }) => {
 export default FavesPage;
 
 FavesPage.propTypes = {
-  comments: PropTypes.array
+  comments: PropTypes.array,
+  updateComment: PropTypes.func
 }
