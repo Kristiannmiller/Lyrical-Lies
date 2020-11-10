@@ -14,7 +14,7 @@ const FavesPage = ({ comments, updateComment }) => {
   }
   if (!comments.length || !faveComments.length) {
     cards.push(
-      <section>
+      <section className="noFaveMessage">
         <img
           className="welcomeLogo"
           title="Welcome to Lyrical Lies"
@@ -45,7 +45,7 @@ const FavesPage = ({ comments, updateComment }) => {
   return (
     <section data-testid="favesWrap" className="favesWrap">
       <h1 className="faveHeader">{faveComments && 'Your favorite lyrical lies'}</h1>
-      <section className="cardContainer">
+      <section className="faveCardContainer">
         {cards}
       </section>
     </section>

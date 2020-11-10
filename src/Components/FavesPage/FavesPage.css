@@ -1,0 +1,38 @@
+.favesWrap {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  padding: 5vh;
+}
+.noFaveMessage {
+  text-align: center;
+  padding-top: 15vh;
+  width: 100vw;
+  height: 50vh;
+}
+.faveHeader {
+  width: 90vw;
+  text-align: center;
+  padding-bottom: 5vh;
+}
+.faveCardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow: scroll;
+  justify-content: center;
+}
+.faveCard {
+  width: 19vw;
+  height: 25vh;
+  text-align: center;
+  border: 1px solid #171213;
+  margin: 2vh;
+  overflow: scroll;
+  padding: 1vh;
+  background-color: white;
+}
+.faveComment {
+  padding-top: 1vh;
+}
