@@ -9,6 +9,8 @@ import HomePage from '../HomePage/HomePage.js'
 import LyricsPage from '../LyricsPage/LyricsPage.js'
 import FavesPage from '../FavesPage/FavesPage.js'
 import { getLyrics } from '../../apiCalls.js'
+import { comments } from '../../CommentsDataset/CommentsData.js'
+
 
 class App extends Component {
   constructor() {
@@ -17,7 +19,7 @@ class App extends Component {
       songInfo: {},
       lyrics: "",
       error: "",
-      comments: []
+      comments: comments
     }
   }
   displayLyrics = async (songInfo) => {
