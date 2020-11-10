@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Kristiannmiller/lyrical-lies">
-    <img src="JOURNEYGIFHERE" alt="moving image of application in use" width="600">
+    <img src="src/Assets/Intro.gif" alt="moving image of application in use" width="600">
   </a>
   <h3 align="center">Lyrical Lies</h3>
   <p align="center">
@@ -38,27 +38,47 @@ In your terminal:
 2. Install NPM packages- `npm install`
 3. Start application- `npm start`
 
+## Where it began
+<img src="src/Assets/wireframe.png" alt="early wireframe design of Lyrical Lies application" width="600">
 
 ## Usage
-#### LOG-IN VIEW
-<img src="src/LandingPage.png" alt="Lyrical Lies app log-in view" width="600">
+#### LANDING PAGE
+
+The first page the user sees is a landing page that welcomes them to the site and brings attention to the navigation buttons
+
+<img src="src/Assets/LandingPage.png" alt="Lyrical Lies app landing page view" width="600">
 
 #### HOMEPAGE VIEW
-<img src="src/HomePage.png" alt="Lyrical Lies app homepage view" width="600">
+
+The home page consists of a search bar that auto-populates using the lyrics api as the user types in a song (song title first works best)
+
+<img src="src/Assets/HomePage.gif" alt="Lyrical Lies app homepage view" width="600">
 
 #### LYRICS VIEW
-<img src="src/LyricsView.png" alt="Lyrical Lies app lyrics view" width="600">
+
+Once a song has been chosen, the user is brought to the lyrics view to see the lyrics and any lyrical lies associated with that song. The user can also play a 30 second clip of the song.
+
+<img src="src/Assets/LyricsView.png" alt="Lyrical Lies app lyrics view" width="600">
 
 #### COMMENTING
-<img src="src/Commenting.gif" alt="Lyrical Lies app commenting feature" width="600">
+
+The user can then comment with their own Lyrical Lie (completely anonymously). That comment can also be favorited right on the lyrics view page to later be displayed with additional information on the Faves Page.
+
+<img src="src/Assets/Commenting.gif" alt="Lyrical Lies app commenting feature" width="600">
+
+#### FAVORITES VIEW
+
+The user can see, and unfavorite any of their currently favorited Lyrical Lies from the Faves Page.
+
+<img src="src/Assets/FavesPage.png" alt="Lyrical Lies app favorites view" width="600">
 
 ## Roadmap
 The total time allotted for this project was approximately 5 days. Future features contemplated by the developer include the following:
 
-* Here's a feature I'd like to add
-* Here's a feature I'd like to add
-* Here's a feature I'd like to add
-* Here's a feature I'd like to add
+* Add an animation to the loading page of a spinning record
+* Find a more reliable api (or pay for this one to be more reliable)
+* Change active/inactive state of home and faves buttons in navigation
+* Responsive design
 
 See the [open issues](https://github.com/Kristiannmiller/lyrical-lies/issues) for a list of proposed features (and known issues).
 
@@ -70,4 +90,4 @@ Project Link: [Lyrical Lies](https://github.com/Kristiannmiller/lyrical-lies)
 ## Acknowledgements
 Leta Keane and Khalid Williams - The developers would like to thank the Turing Module 3 instructors for their assistance throughout this project and for their daily lessons on the magic of React.
 
-My Turing Mentors - Including Turing graduates Jon Sweet, Pol Sieira, Veronica Andrade and Aimee Fritz for their constant support throughout this project.
+My Turing Mentors - Including Turing graduates Jon Sweet, Pol Sieira, and Aimee Fritz for their constant support throughout this project.
