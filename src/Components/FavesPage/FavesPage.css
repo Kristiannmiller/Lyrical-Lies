@@ -33,6 +33,13 @@
   padding: 1vh;
   background-color: white;
 }
+.faveArtist {
+  background-color: white;
+}
+.faveTitle {
+  background-color: white;
+}
 .faveComment {
   padding-top: 1vh;
+  background-color: white
 }
