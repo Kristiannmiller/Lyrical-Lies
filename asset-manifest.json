@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/lyrical-lies/static/css/main.80bc2acc.chunk.css",
+    "main.js": "/lyrical-lies/static/js/main.99e1d66c.chunk.js",
+    "main.js.map": "/lyrical-lies/static/js/main.99e1d66c.chunk.js.map",
+    "runtime-main.js": "/lyrical-lies/static/js/runtime-main.ea1881b4.js",
+    "runtime-main.js.map": "/lyrical-lies/static/js/runtime-main.ea1881b4.js.map",
+    "static/js/2.bb340560.chunk.js": "/lyrical-lies/static/js/2.bb340560.chunk.js",
+    "static/js/2.bb340560.chunk.js.map": "/lyrical-lies/static/js/2.bb340560.chunk.js.map",
+    "static/js/3.700c69f7.chunk.js": "/lyrical-lies/static/js/3.700c69f7.chunk.js",
+    "static/js/3.700c69f7.chunk.js.map": "/lyrical-lies/static/js/3.700c69f7.chunk.js.map",
+    "index.html": "/lyrical-lies/index.html",
+    "static/css/main.80bc2acc.chunk.css.map": "/lyrical-lies/static/css/main.80bc2acc.chunk.css.map",
+    "static/js/2.bb340560.chunk.js.LICENSE.txt": "/lyrical-lies/static/js/2.bb340560.chunk.js.LICENSE.txt",
+    "static/media/FaveActive.b63482e6.svg": "/lyrical-lies/static/media/FaveActive.b63482e6.svg",
+    "static/media/FaveIcon.329d3a76.svg": "/lyrical-lies/static/media/FaveIcon.329d3a76.svg",
+    "static/media/lyricalLiesLogo.da96e8af.png": "/lyrical-lies/static/media/lyricalLiesLogo.da96e8af.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea1881b4.js",
+    "static/js/2.bb340560.chunk.js",
+    "static/css/main.80bc2acc.chunk.css",
+    "static/js/main.99e1d66c.chunk.js"
+  ]
+}
