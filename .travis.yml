@@ -1,3 +1,9 @@
 language: node_js
 node_js:
-  - "node"
+- node
+deploy:
+  provider: heroku
+  api_key:
+    secure: KdIxEOWBoDBc5md/nshIYidPCrGq8veYpV87kgXjZ00fKkv9gwIqQam+9TSYNwfs+Nfm6OvnQsww/zSRo52ju4R1NF04cCcxnfZ0jM0uhfJHku1KTIqBWVk5iso/DJPWEMKXLLgxzihr/b9vP1sS7ssbs64j9fwNPJebn6ah85asUaTsWGGoH0qdSN+87ZKIUBtSmORYOTBpRl5i3V6tEM4lQCTNDPtU26N/U5800vdbGvtqA9as91OTYkLPE4bGw8leF9owq5B/e4JvrG+6pVUQboHsDUh7ORNzzEIc16boNKdmElNlfatOl0+Ft67io/kzOTESqTb+Qu8+zRCZh5yHIkVUMTflkZgwZpb5PrGUT7oyt06ag1utd01YJfw6AYKM6V0ePMtGJDX8c/QA8KKxwqxD5Rnq/3R0ktKNlwsfMAIGsXoRFZB1e2R2IFkamcarXbBES9p9+J+nOxdYieIxDoqijW5W9G+RL/F0PV2tDpMNgqqLbKetZ5oN0sTJE06HXCe3uF5qCvt+UDPw5Adx7Oi+NbTpdtQFuEUbvBtarAo9Up6MvUdL9RgFTJ45PSvzLZu3CHzyfQ53Y/cTEmMPVZYVyj5TVn/CXpW7P24vqiPvimo3aGpDF8NdIg2uTOge+WLaBkgUSaYOhQW+sg+KVlM3hJrysWlbwsoDpVU=
+  app: lyrical-lies
+  skip_cleanup: true
