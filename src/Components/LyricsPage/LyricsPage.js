@@ -6,12 +6,12 @@ import CommentsForm from '../CommentsForm/CommentsForm.js';
 import CommentCards from '../CommentCards/CommentCards.js';
 
 const LyricsPage = ({songInfo, lyrics, error, submitComment, comments, updateComment}) => {
-  const onTrackChange = () => {
-    const audio = document.getElementsByClassName('sample')[0];
-    if(audio) {
-      audio.load();
-    }
-  }
+  // const onTrackChange = () => {
+  //   const audio = document.getElementsByClassName('sample')[0];
+  //   if(audio) {
+  //     audio.load();
+  //   }
+  // }
   if(error || !lyrics) {
     return (
       <section data-testid='landingWrap' className='landingWrap'>
@@ -27,10 +27,10 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments, updateCom
     )
   }
 
-  let audioSample =
-  <audio onClick={onTrackChange()} className='sample' controls>
-    <source data-testid='audioSample' src={songInfo.preview} type='audio/mpeg'/>
-  </audio>
+  // let audioSample =
+  // <audio onClick={onTrackChange()} className='sample' controls>
+  //   <source data-testid='audioSample' src={songInfo.preview} type='audio/mpeg'/>
+  // </audio>
 
   return (
     <section data-testid='lyricsView' className='lyricsPageWrap'>
@@ -40,7 +40,7 @@ const LyricsPage = ({songInfo, lyrics, error, submitComment, comments, updateCom
           {songInfo.title_short}
           </h1>
           <h2 className='songDetails'>{songInfo.artist.name}</h2>
-          {songInfo.preview && audioSample}
+          {/*songInfo.preview && audioSample*/}
         </section>
         <p className='lyrics'>{`${lyrics}`}</p>
       </section>
