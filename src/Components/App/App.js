@@ -65,12 +65,16 @@ class App extends Component {
       <BrowserRouter>
         <main>
           <header>
-            <img
-            className='logo'
-            title='Lyrical Lies Logo'
-            src={logo}
-            alt='Lyrical Lies Logo'
-            />
+            <Route>
+              <NavLink id='homeLogo' activeClassName='activeHomeButton' to='/home'>
+                <img
+                className='logo'
+                title='Navigate back to home page'
+                src={logo}
+                alt='Lyrical Lies Logo'
+                />
+              </NavLink>
+            </Route>
             <section className='navigationWrap'>
               <Route>
                 <NavLink id='homeButton' activeClassName='activeHomeButton' to='/home'>

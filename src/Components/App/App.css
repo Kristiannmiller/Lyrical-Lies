@@ -22,9 +22,16 @@ a {
   width: 10vh;
   height: 10vh;
 }
+#homeLogo {
+  margin: 0;
+  height: 6rem;
+  width: auto;
+  align-self: flex-start;
+}
 .logo {
   height: 6rem;
-  padding: 1vh;
+  padding-left: 1vw;
+  padding-top: 1vh;
   background-color: #A8763E;
 }
 .navImg {

@@ -75,5 +75,22 @@ describe('App', () => {
       expect(lyricsView).toBeInTheDocument();
       expect(lyrics).toBeInTheDocument();
     })
+    it('Should redirect back to the homepage', () => {
+      render (
+        <App />
+      )
+      const homeButton = screen.getByAltText('Navigate back to home page')
+      const favesButton = screen.getByAltText('Navigate to favorites page')
+      expect(homeButton).toBeInTheDocument();
+      expect(favesButton).toBeInTheDocument();
+      userEvent.click(favesButton);
+      const logo = screen.getByAltText('Lyrical Lies Logo')
+      const favesWrap = screen.getByTestId('favesWrap')
+      expect(favesWrap).toBeInTheDocument();
+      expect(logo).toBeInTheDocument();
+      userEvent.click(logo);
+      const formInput = screen.getByPlaceholderText('Enter song title followed by artist')
+      expect(formInput).toBeInTheDocument();
+    })
   })
 })

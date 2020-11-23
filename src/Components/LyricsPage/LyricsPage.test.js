@@ -42,7 +42,7 @@ describe('LyricsPage', () => {
       expect(title).toBeInTheDocument();
       expect(lyrics).toBeInTheDocument();
     })
-    it(`Should display an audio sample if it's available`, () => {
+    it.skip(`Should display an audio sample if it's available`, () => {
       const mockedFunction = jest.fn()
       render (
         <MemoryRouter>
